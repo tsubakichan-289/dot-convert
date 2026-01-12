@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>dot_convert</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="AES.fs" />
+    <Compile Include="Convert.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+</Project>
