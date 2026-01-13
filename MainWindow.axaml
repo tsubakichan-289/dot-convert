@@ -15,7 +15,7 @@
                 <TextBlock Text="Plaintext" FontWeight="Bold" />
                 <TextBox x:Name="PlainInput"
                          Grid.Row="1"
-                         Watermark="Enter text"
+                         Watermark="Enter plain text"
                          AcceptsReturn="True"
                          TextWrapping="Wrap"
                          ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -48,7 +48,7 @@
                 <TextBlock Text="Encrypted Output" FontWeight="Bold" />
                 <TextBox x:Name="EncryptedOutput"
                          Grid.Row="1"
-                         Watermark="Encrypted text"
+                         Watermark="Enter encrypted text"
                          AcceptsReturn="True"
                          TextWrapping="Wrap"
                          ScrollViewer.VerticalScrollBarVisibility="Auto"

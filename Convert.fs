@@ -106,10 +106,15 @@ module Convert =
             let zero = '\u2800'
             s |> Seq.map (fun c -> int c - int zero) |> Seq.toList
 
-    // Remove newline separators from a string.
+    // Remove common newline separators from a string.
     let removeNewlines : string -> string
         = fun s ->
-            s.Replace("\n", "")
+            s
+            |> Seq.filter (fun c ->
+                c <> '\n' && c <> '\r' && c <> '\u2028' && c <> '\u2029'
+            )
+            |> Seq.toArray
+            |> String
 
     // Convert a list of integers to an uppercase hex string.
     let intListToHexString : int list -> string
