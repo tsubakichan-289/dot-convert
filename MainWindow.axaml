@@ -1,0 +1,67 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="DotConvert.MainWindow"
+        Title="dot-convert"
+        Width="640"
+        Height="520"
+        MinWidth="640"
+        MinHeight="520">
+    <Grid Margin="24" RowDefinitions="*,Auto,*" RowSpacing="16">
+        <Border BorderBrush="#C0C0C0" BorderThickness="1" CornerRadius="6" Padding="12">
+            <Grid RowDefinitions="Auto,*,Auto" RowSpacing="8">
+                <TextBlock Text="Plaintext" FontWeight="Bold" />
+                <TextBox x:Name="PlainInput"
+                         Grid.Row="1"
+                         Watermark="Enter text"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                         VerticalAlignment="Stretch"
+                         TextChanged="PlainTextChanged" />
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="12" HorizontalAlignment="Left">
+                    <Button Content="Import" Width="120" Click="PlainImportClicked" />
+                    <Button Content="Save" Width="120" Click="PlainSaveClicked" />
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" BorderBrush="#C0C0C0" BorderThickness="1" CornerRadius="6" Padding="12">
+            <StackPanel Spacing="8">
+                <TextBlock Text="Key" FontWeight="Bold" />
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <TextBox x:Name="KeyInput"
+                             Width="260"
+                             Watermark="Enter key" />
+                    <ToggleButton x:Name="KeyConfirmToggle"
+                                  Content="Confirm"
+                                  Width="120"
+                                  Checked="KeyConfirmChecked"
+                                  Unchecked="KeyConfirmUnchecked" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" BorderBrush="#C0C0C0" BorderThickness="1" CornerRadius="6" Padding="12">
+            <Grid RowDefinitions="Auto,*,Auto" RowSpacing="8">
+                <TextBlock Text="Encrypted Output" FontWeight="Bold" />
+                <TextBox x:Name="EncryptedOutput"
+                         Grid.Row="1"
+                         Watermark="Encrypted text"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                         VerticalAlignment="Stretch"
+                         TextChanged="EncryptedTextChanged" />
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="12" HorizontalAlignment="Left">
+                    <Button Content="Import" Width="120" Click="EncryptedImportClicked" />
+                    <Button Content="Save" Width="120" Click="EncryptedSaveClicked" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
+
+

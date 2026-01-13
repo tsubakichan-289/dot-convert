@@ -1,24 +1,19 @@
+namespace DotConvert
+
 open System
-open System.IO
-open System.Text
-open Cryptosystem.Convert
+open Avalonia
 
-let private printUsage () =
-    printfn "Usage:"
-    printfn "  dot-convert enc <input> <output>"
-    printfn "  dot-convert dec <input> <output>"
+module Program =
 
-[<EntryPoint>]
-let main args =
-    match args with
-    | [| "enc"; inputPath; outputPath |] ->
-        let content = File.ReadAllText(inputPath, Encoding.UTF8)
-        writeStrToFile outputPath content
-        0
-    | [| "dec"; inputPath; outputPath |] ->
-        let content = readStrFromFile inputPath
-        File.WriteAllText(outputPath, content, Encoding.UTF8)
-        0
-    | _ ->
-        printUsage ()
-        1
+    [<CompiledName "BuildAvaloniaApp">] 
+    let buildAvaloniaApp () = 
+        AppBuilder
+            .Configure<App>()
+            .UsePlatformDetect()
+            .WithInterFont()
+            .LogToTrace(areas = Array.empty)
+
+    [<EntryPoint; STAThread>]
+    let main argv =
+        buildAvaloniaApp().StartWithClassicDesktopLifetime(argv)
+
